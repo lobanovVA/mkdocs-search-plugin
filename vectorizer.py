@@ -9,9 +9,7 @@ def create_embeddings(input_json_path, output_vector_path, output_metadata_path)
     with open(input_json_path, 'r', encoding='utf-8') as f:
         documents = json.load(f)
 
-    # 2. Инициализируем модель (локально)
-    # Используем качественную мультиязычную модель (RU/EN)
-    # При первом запуске она скачается, затем будет работать полностью офлайн
+    # Инициализируем модель (локально)
     print("Загрузка локальной ИИ-модели (BERT-based)...")
     model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
 

@@ -15,7 +15,7 @@ class LocalSearchEngine:
         with open(metadata_path, 'r', encoding='utf-8') as f:
             self.metadata = json.load(f)
             
-        # 3. Создаем индекс FAISS для быстрого поиска по косинусному сходству
+        # Создаем индекс FAISS для быстрого поиска по косинусному сходству
         if self.embeddings.ndim != 2:
             raise ValueError(f"Ожидаются матрица эмбеддингов, получено: shape={self.embeddings.shape}")
         dimension = self.embeddings.shape[1]
